@@ -18,21 +18,48 @@ public class LearnCommand extends BukkitCommand {
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String s, @NotNull String[] strings) {
+
         if(sender instanceof Player player) {
-            //Bukkit.getLogger().warning(player.getName());
 
             World world = player.getWorld();
             Location playerLocation = player.getLocation();
-            Location location = new Location(world, playerLocation.getX(), playerLocation.getY() + 10, playerLocation.getZ());
+
+            Location location1 = new Location(world, -10000, 60, -10000);
+            Location location2 = new Location(world, 10000, 60, 10000);
+
+            double checkX = Math.floor(Math.random() * 20000);
+            double checkZ = Math.floor(Math.random() * 20000);
+
+
+            location1.setX(checkX - 10000);
+            location1.setZ(checkZ - 10000);
+
+
+
+
+
 
             Block block = world.getBlockAt(playerLocation.getBlockX(), playerLocation.getBlockY() - 1, playerLocation.getBlockZ());
             Material type = block.getType();
 
+            player.teleport(location1);
 
-            if (type == Material.AIR) {
-                Bukkit.getLogger().warning("AIR");
-            }
-            else  Bukkit.getLogger().warning(type.toString());
+
+
+
+//            for (double i = -60; i <= 320; i++) {
+//
+//
+//            }
+
+
+
+
+
+//            if (type == Material.AIR) {
+//                Bukkit.getLogger().warning("AIR");
+//            }
+//            else  Bukkit.getLogger().warning(type.toString());
         }
 
         return false;
