@@ -1,0 +1,6 @@
+name: learn-plugin
+version: '${version}'
+main: org.se0k.learnplugin.Learn_plugin
+api-version: '1.20'
+authors: [SE0K]
+description: 플러그인 공부
